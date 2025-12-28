@@ -4,24 +4,27 @@ import { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext();
 
-const getFromLocalStorgae = () => {
-  if (typeof window !== "undefined") {
-    const value = localStorage.getItem("theme");
-    return value || "light";
-  }
-};
-
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState(getFromLocalStorgae());
+  // Start with a stable default for SSR to avoid hydration mismatches.
+  const [theme, setTheme] = useState("light");
 
-  const toggle=()=>{
-    setTheme(theme==='light'?'dark':'light')
-  }
-  useEffect(()=>{
-localStorage.setItem('theme',theme)
-  },[theme])
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    if (stored) {
+      setTheme(stored);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggle = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme ,toggle}}>
+    <ThemeContext.Provider value={{ theme, toggle }}>
       {children}
     </ThemeContext.Provider>
   );
