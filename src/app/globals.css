@@ -28,12 +28,18 @@ a {
 .wrapper {
   max-width: 1536px;
   margin-left: auto;
-  margin-right: auto;
-  background-color: rebeccapurple;
+  margin-right: auto; 
   padding-left: 80px;
   padding-right: 80px;
 }
-
+.dark{
+  
+  --bg: #0f172a;
+  --textColor: #ddd;
+  --softBg: #1f273a;
+  --softTextColor: #a6a6a6;
+ 
+}
 @media screen and (max-width: 1536px) {
   .wrapper {
     max-width: 1366px;
