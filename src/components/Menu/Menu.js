@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from './navbar.module.css';
+import styles from './menu.module.css';
 
-const NavBar = () => {
+const Menu = () => {
   return (
-    <div className={styles.container}>NavBar</div>
+    <div className={styles.container}>Menu</div>
   )
 }
 
-export default NavBar
+export default Menu
