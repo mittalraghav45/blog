@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './featured.module.css';
 import Image from 'next/image';
 
@@ -6,7 +5,7 @@ const Featured = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <b>Het reaghav</b>
+        <b>Hey Raghav,here</b>
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
@@ -14,7 +13,7 @@ const Featured = () => {
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>text h1 of the blog</h1>
-          <p>className={styles.postDescription} blog content</p>
+          <p className={styles.postDescription}>blog content</p>
           <button className={styles.button}>Read More</button>
         </div>
       </div>
