@@ -7,7 +7,7 @@ import { useContext } from "react";
 
 const ThemeToggle = () => {
   const { toggle, theme } = useContext(ThemeContext);
-  console.log(theme);
+  // console.log(theme);
 
   return (
     <div className={styles.container} onClick={toggle}>
